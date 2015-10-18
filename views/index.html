@@ -1,0 +1,27 @@
+<style>
+  input {
+    width: 400px;
+    height: 22px;
+    line-height: 22px;
+  }
+</style>
+<div class="content">
+  <input type="text" id="J_input" placeholder="input url">
+  <button id="J_btn">submit</bitton>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#J_btn').on('click', function() {
+      var url = $('#J_input').val();
+      $.ajax({
+        url: '/api/album/downloadImg',
+        data: {
+          url: url
+        },
+        success: function(resp) {
+          debugger
+        }
+      });
+    });
+  });  
+</script>
